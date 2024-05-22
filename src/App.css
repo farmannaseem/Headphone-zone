@@ -1,38 +1,453 @@
-.App {
+/* Dropdown Menu CSS */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color:white;
+  color:333;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:#ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: white;
+}
+/* CSS for search icon */
+.search-icon {
+  display: inline-block;
+  margin-left: auto; /* Align to the right */
+}
+
+.search-icon input[type="text"] {
+  padding: 5px;
+  width: 150px;
+}
+
+.search-icon button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* CSS for Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-field{
+  width: 100%;
+  height: 100px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background-color: white;
+
+}
+
+
+.input-field[type="text"]{
+  font-weight: bolder;
+  font-size: 25px;
+}
+.account-icon,
+.cart-icon {
+  margin-left: 10px; /* Adjusted margin */
+}
+
+/* CSS for Slider */
+/* CSS for Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1500px; /* Adjust slider width as needed */
+  height: 600px; /* Increase slider height */
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slides {
+  display: flex;
+  width: 400%; /* Ensure all slides are displayed in a row */
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 25%; /* Each slide occupies 25% of the slider width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Slide background color */
+  font-size: 24px;
+  height: 100%; /* Ensure each slide fills the entire slider height */
+  /* Adjust slide height as needed */
+}
+
+.active {
+  background-color: #ccc; /* Change the active slide background color */
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px; /* Adjust left spacing for prev button */
+}
+
+.next {
+  right: 10px; /* Adjust right spacing for next button */
+}
+.section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.section {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button:hover {
+  background-color: #0056b3;
+}
+/* app.css */
+
+.section {
+  margin: 20px;
+}
+
+.card-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  width: calc(100% / 3 - 10px); /* Adjust the width as needed */
+  margin-right: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+.image{
+  width: 200px;
+}
+.image p h3{
+  border: solid;
+  border-radius: 30px;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 100%;
+  max-height: 200px; 
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-details {
+  padding-top: 10px;
+
+}
+.grid-container {
+  display: flex;
+}
+
+.grid-item text {
+  flex: 1; 
+  border: 1px solid #ddd; 
+  border-radius: 20px; /* Example border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example box shadow */
+  padding: 10px; /* Example padding */
+  background-color: #fff; /* Example background color */
+  margin-right: 50px; /* Example margin to create space between cards */
+
+}
+
+.video {
+  border-radius: 50px; /* Example border radius for video card */
+  /* Additional styles for video card */
+  background-color: #f0f0f0; /* Example background color */
+  padding: 15px; /* Example padding */
+}
+
+.text {
+  /* Styles for text card */
+  background-color: #f9f9f9; /* Example background color */
+  padding: 15px; /* Example padding */
+  border-radius: 20px;
+  width: 600px;
+  position: relative;
+  top: 5px;
+}
+span {
+  --gradient: linear-gradient(276deg, rgba(66, 207, 231, 1) 15%, rgba(237, 113, 163, 1) 85%);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.paragraph{
+  position: absolute;
+  font-size: large;
+}
+.content{
+  text-align: center;
+}
+span {
+  display: block; /* Make span a block element */
+  margin-bottom: 20px; /* Example margin to create space between the two text elements */
+}
+.heading-text{
+  position: relative;
+  top: 100px;
+  font-size: 25px;
+}
+h1{
+  position: relative;
+  top: 100px;
+  right: 10px;
+  font-size: 35px;
+}
+.video-content{
+  border-radius:50px;
+  margin:20px;
+  width:650px;
+}
+
+@media screen and (max-width:600px) {.hz-mobile-logo { height: 30px; width: 120px; padding-top:5px!important;}}
+@media screen and (max-width:300px) {.hz-mobile-logo { height: 25px; width: 120px; padding-top:5px!important;}}
+.logo-text {opacity: 1;} @keyframes hideshow {0%{opacity: 1;} 10% {opacity: 1;} 11% {opacity: 0;} 100%{opacity: 0;}} #head-1 {opacity: 0; animation: hideshow 10s ease infinite;} #head-2 {opacity: 0; animation: hideshow 10s 1s ease infinite;} #head-3 {opacity: 0;animation: hideshow 10s 2s ease infinite;} #head-4 {opacity: 0;animation: hideshow 10s 3s ease infinite;} #head-5 {opacity: 0;animation: hideshow 10s 4s ease infinite;} #head-6 {opacity: 0;animation: hideshow 10s 5s ease infinite;} #head-7 {opacity: 0;animation: hideshow 10s 6s ease infinite;} #head-8 {opacity: 0;animation: hideshow 10s 7s ease infinite;} #head-9 {opacity: 0;animation: hideshow 10s 8s ease infinite;} #head-10 {opacity: 0;animation: hideshow 10s 9s ease infinite;}
+/* Style the dropdown arrow */
+.input-field{
+  
+  
+}
+.login-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+
+
+}
+
+.card {
+  position: relative;
+  margin-top: 100px;
+  width: 50vw;
+  height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background: rgb(241, 226, 223 );
+}
+.login-header{
+  font-size: 300%;
+
+}
+
+.card-content {
+  text-align: center;
+}
+
+.card-content h2 {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 70%;
+  height: 45px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgb(241, 226, 223 );
+}
+
+.placeholder, .placeholder1 {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: top 0.3s ease, font-size 0.3s ease;
+}
+
+.input-group.focused .placeholder,
+.input-group.focused .placeholder1,
+.input-group input:focus + .placeholder,
+.input-group input:focus + .placeholder1 {
+  top: 5px;
+  font-size: 0.7em;
+}
+
+/* Add other styles as needed */
+
+
+
+.btn-login{
+  width: 70vh;
+  height: 8vh;
+  padding: 10px;
+  background-color:#463D3B;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 1000;
+  margin-top: 20px;
+}
+
+.links {
+  margin-top: 15px;
+  text-align: center;
+}
+.link a{
+  position: relative;
+  right: 170px;
+  color: #443B39;
+}
+
+.links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.links a:hover {
+  text-decoration: underline;
 }
